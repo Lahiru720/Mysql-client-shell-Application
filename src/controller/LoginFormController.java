@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -12,8 +13,11 @@ public class LoginFormController {
     public TextField txtUserName;
     public TextField txtPort;
     public TextField txtHost;
-
+public void initialize(){
+    txtUserName.requestFocus();
+}
     public void btnExit_OnAction(ActionEvent event) {
+        Platform.exit();
     }
 
     public void btnConnect_OnAction(ActionEvent event) {
