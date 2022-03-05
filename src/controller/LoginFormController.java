@@ -14,10 +14,13 @@ public class LoginFormController {
     public TextField txtPort;
     public TextField txtHost;
 public void initialize(){
-    txtUserName.requestFocus();
+
+    Platform.runLater(() -> txtUserName.requestFocus());
+
 }
     public void btnExit_OnAction(ActionEvent event) {
         Platform.exit();
+
     }
 
     public void btnConnect_OnAction(ActionEvent event) {
