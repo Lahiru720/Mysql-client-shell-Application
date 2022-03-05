@@ -109,8 +109,8 @@ public void initialize(){
                     Platform.runLater(stage::sizeToScene);
 
                 }
-            } catch () {
-
+            }  catch (IOException | InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
