@@ -93,6 +93,20 @@ public void initialize(){
 
 
                 } else {
+                    FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/view/ShellForm.fxml"));
+                    AnchorPane root = fxmlLoader.load();
+                    Scene shellScene = new Scene(root);
+                    Stage stage = (Stage) txtUserName.getScene().getWindow();
+                    stage.setScene(shellScene);
+                    ShellFormController controller = fxmlLoader.getController();
+                    controller.initData(txtHost.getText(),
+                            txtPort.getText(),
+                            txtUserName.getText(),
+                            txtPassword.getText());
+                    stage.centerOnScreen();
+                    stage.setResizable(true);
+                    stage.setTitle("MySQL Client Shell");
+                    Platform.runLater(stage::sizeToScene);
 
                 }
             } catch () {
