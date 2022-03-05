@@ -2,10 +2,18 @@ package controller;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Region;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class LoginFormController {
     public PasswordField txtPassword;
@@ -40,6 +48,30 @@ public void initialize(){
             txtUserName.requestFocus();
             txtUserName.selectAll();
             return;
+
+            try {
+            String command = String.format("mysql -h %s -u %s -p%s --port %s -e exit",
+                    txtHost.getText(),
+                    txtUserName.getText(),
+                    txtPassword.getText(),
+                    txtPort.getText());
+            String[] commands = {"mysql",
+                    "-h", txtHost.getText(),
+                    "-u", txtUserName.getText(),
+                    "--port", txtPort.getText(),
+                    "-p" + txtPassword.getText(),
+                    "-e", "exit"};
+            Process mysql = Runtime.getRuntime().exec(commands);
+
+
+
+
+                } else {
+
+                }
+            } catch () {
+
+            }
         }
     }
 }
