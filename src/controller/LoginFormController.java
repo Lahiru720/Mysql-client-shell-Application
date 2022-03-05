@@ -50,20 +50,25 @@ public void initialize(){
             return;
 
             try {
-            String command = String.format("mysql -h %s -u %s -p%s --port %s -e exit",
-                    txtHost.getText(),
-                    txtUserName.getText(),
-                    txtPassword.getText(),
-                    txtPort.getText());
-            String[] commands = {"mysql",
-                    "-h", txtHost.getText(),
-                    "-u", txtUserName.getText(),
-                    "--port", txtPort.getText(),
-                    "-p" + txtPassword.getText(),
-                    "-e", "exit"};
-            Process mysql = Runtime.getRuntime().exec(commands);
+//            String command = String.format("mysql -h %s -u %s -p%s --port %s -e exit",
+//                    txtHost.getText(),
+//                    txtUserName.getText(),
+//                    txtPassword.getText(),
+//                    txtPort.getText());
+//            String[] commands = {"mysql",
+//                    "-h", txtHost.getText(),
+//                    "-u", txtUserName.getText(),
+//                    "--port", txtPort.getText(),
+//                    "-p" + txtPassword.getText(),
+//                    "-e", "exit"};
+//            Process mysql = Runtime.getRuntime().exec(commands);
 
-
+                Process mysql = new ProcessBuilder("mysql",
+                        "-h", txtHost.getText(),
+                        "-u", txtUserName.getText(),
+                        "--port", txtPort.getText(),
+                        "-p",
+                        "-e", "exit").start();
 
 
                 } else {
