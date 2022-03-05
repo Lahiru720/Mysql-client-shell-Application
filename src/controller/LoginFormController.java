@@ -70,6 +70,27 @@ public void initialize(){
                         "-p",
                         "-e", "exit").start();
 
+                mysql.getOutputStream().write(txtPassword.getText().getBytes());
+                mysql.getOutputStream().close();
+
+                int exitCode = mysql.waitFor();
+                if (exitCode != 0) {
+
+                    InputStream es = mysql.getErrorStream();
+                    byte[] buffer = new byte[es.available()];
+                    es.read(buffer);
+                    es.close();
+
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Connection failure");
+                    alert.setHeaderText("Can't establish the connection");
+                    alert.setContentText(new String(buffer));
+                    alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+                    alert.show();
+
+                    txtUserName.requestFocus();
+                    txtUserName.selectAll();
+
 
                 } else {
 
