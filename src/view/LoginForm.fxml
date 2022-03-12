@@ -50,8 +50,8 @@
                </children>
             </VBox>
             <Label layoutX="27.0" layoutY="70.0" prefHeight="16.0" prefWidth="393.0" text="Please enter your valid login credentails to connect !" />
-            <JFXButton fx:id="btnConnect" buttonType="RAISED" layoutX="262.0" layoutY="242.0" onAction="#btnConnect_OnAction" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #7ecccb;" text="Connect" />
-            <JFXButton fx:id="btnExit" buttonType="RAISED" layoutX="379.0" layoutY="242.0" onAction="#btnExit_OnAction" prefHeight="33.0" prefWidth="64.0" style="-fx-background-color: #eaf7f6;" text="Exit" />
+            <JFXButton fx:id="btnConnect" buttonType="RAISED" defaultButton="true" layoutX="262.0" layoutY="242.0" onAction="#btnConnect_OnAction" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #7ecccb;" text="Connect" />
+            <JFXButton fx:id="btnExit" buttonType="RAISED" cancelButton="true" layoutX="379.0" layoutY="242.0" onAction="#btnExit_OnAction" prefHeight="33.0" prefWidth="64.0" style="-fx-background-color: #eaf7f6;" text="Exit" />
             <Separator layoutX="42.0" layoutY="46.0" prefHeight="6.0" prefWidth="401.0" />
             <AnchorPane layoutX="-153.0" layoutY="284.0" prefHeight="16.0" prefWidth="677.0" style="-fx-background-color: #f7ab3d;" />
          </children>
