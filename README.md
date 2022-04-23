@@ -10,8 +10,8 @@ This repository is where i develop the Java Apps runner as a inidividual project
 
 
 # Features
-    1. You can Run any king of java code and test everything here
-    2. when you're got some error, you will be see that on output panel.
+    1. You can Run any kind of sql query and test everything here
+    2. when you're got some error, or output you will be see that on output panel.
 
 # How to use this repository?
 Run the setup file,and install the file,and then Run the application.
